@@ -56,7 +56,20 @@ puts "Done getting Mashable.com data.\n"
 test_array = []
 mashable_object.get_hot_titles( test_array )
 
+build_string = ''
+(0..5).each do |i|
+  build_string << "#{test_array[i]}  \n"
+end
+
+puts build_string
+
 get '/mashable' do
-  "This is mashable"
-  "#{test_array}"
+#  string = "This is mashable\n\n"
+#  string += "#{test_array}"
+#  string += "\n"
+  @test_string = "#{build_string}"
+  erb :mash_view
+
+#  string += "#{test_array[3]}"
+#  string += "\n"
 end
