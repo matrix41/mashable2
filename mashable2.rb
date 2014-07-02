@@ -9,9 +9,22 @@ class Mashable2
   def get_title
     battlestar = response.parsed_response
 
-    battlestar.each do |viper|
-      puts viper
+    new_articles = battlestar['new']
+    rising_articles = battlestar['rising']
+    hot_articles = battlestar['hot']
+
+    new_articles.each do |raider|
+      puts raider['title']
     end
+
+    rising_articles.each do |viper|
+      puts viper['title']
+    end
+
+    hot_articles.each do |raptor|
+    	puts raptor['title']
+    end
+
 
   end
 
