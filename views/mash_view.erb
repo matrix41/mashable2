@@ -1,4 +1,8 @@
-<h1> test test test </h1>
-<% @my_array.each do |t| %>
-<h1><%= t %></h1>
+<h1> Mashable </h1>
+<% @my_hash.each do |t| %>
+  <!--<h1><%= t %></h1>-->
+  <% t.each do |title,picture| %>
+    <img src=<%= picture %> ><br>
+    <h1><%= title %></h1>
+  <% end %>
 <% end %>
